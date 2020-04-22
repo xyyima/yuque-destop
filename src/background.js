@@ -15,11 +15,12 @@ import createWindow from "./helpers/window";
 import env from "env";
 
 const setApplicationMenu = () => {
-  const menus = [editMenuTemplate];
   if (env.name !== "production") {
+    const menus = [editMenuTemplate];
     menus.push(devMenuTemplate);
+    Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
   }
-  Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
+
 };
 
 // Save userData in separate folders for each environment.
@@ -34,17 +35,19 @@ app.on("ready", () => {
   setApplicationMenu();
 
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600
+    width: 1333,
+    height: 768
   });
+  mainWindow.setFullScreen(true);
+  // mainWindow.loadURL(
+  //   url.format({
+  //     pathname: path.join(__dirname, "app.html"),
+  //     protocol: "file:",
+  //     slashes: true
+  //   })
+  // );
 
-  mainWindow.loadURL(
-    url.format({
-      pathname: path.join(__dirname, "app.html"),
-      protocol: "file:",
-      slashes: true
-    })
-  );
+  mainWindow.loadURL("https://www.yuque.com")
 
   if (env.name === "development") {
     mainWindow.openDevTools();
