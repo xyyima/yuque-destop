@@ -31,7 +31,7 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit",
     "start": "node build/start.js",
-    "release": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+    "release": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
