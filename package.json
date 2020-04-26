@@ -2,7 +2,7 @@
   "name": "yuque",
   "productName": "yuque",
   "description": "yuque",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "author": "Tony Wang <esfak47@qq.com>",
   "copyright": "© 2020, Xyyima inc.",
@@ -31,8 +31,7 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit",
     "start": "node build/start.js",
-    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder",
-    "r": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -p onTag"
+    "release": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
