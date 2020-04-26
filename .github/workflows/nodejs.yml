@@ -27,7 +27,6 @@ jobs:
     - run: npm install
     # - run: npm run build --if-present
     - run: npm run preunit --if-present
-    - run: npm run release
+    - run: GH_TOKEN=${{ secrets.GITHUB_TOKEN }} && npm run release
       env:
         CI: true
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
