@@ -17,6 +17,10 @@
     ],
     "directories": {
       "buildResources": "resources"
+    },
+    "win": {
+      "publish": ["github"],
+      "artifactName": "${productName}_setup_${version}.${ext}"
     }
   },
   "scripts": {
@@ -28,7 +32,7 @@
     "test": "npm run unit",
     "start": "node build/start.js",
     "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder",
-    "r": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+    "r": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -p onTag"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
