@@ -34,7 +34,7 @@
     "test": "npm run unit",
     "start": "node build/start.js",
     "build": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w -p never",
-    "release": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -wlm"
+    "release": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
