@@ -38,7 +38,7 @@ app.on("ready", () => {
     width: 1333,
     height: 768
   });
-  mainWindow.setFullScreen(true);
+  mainWindow.setFullScreen(false);
   // mainWindow.loadURL(
   //   url.format({
   //     pathname: path.join(__dirname, "app.html"),
