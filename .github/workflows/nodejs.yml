@@ -5,11 +5,10 @@ name: Node.js Release CI
 
 on:
   push:
-    tags: release/*
+    tags: 0.*
     
 jobs:
   build:
-
     runs-on: windows-latest
 
 #     strategy:
