@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/xyyima/yuque-destop/workflows/Node.js%20CI/badge.svg)
 # electron-boilerplate
 
 A minimalistic boilerplate for [Electron runtime](http://electron.atom.io). Tested on Windows, macOS and Linux.  
