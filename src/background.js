@@ -39,14 +39,6 @@ app.on("ready", () => {
     height: 768
   });
   mainWindow.setFullScreen(false);
-  // mainWindow.loadURL(
-  //   url.format({
-  //     pathname: path.join(__dirname, "app.html"),
-  //     protocol: "file:",
-  //     slashes: true
-  //   })
-  // );
-
   mainWindow.loadURL("https://www.yuque.com")
 
   if (env.name === "development") {
