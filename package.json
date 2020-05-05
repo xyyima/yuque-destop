@@ -2,7 +2,7 @@
   "name": "yuque",
   "productName": "yuque",
   "description": "yuque",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "author": "Tony Wang <esfak47@qq.com>",
   "copyright": "© 2020, Xyyima inc.",
@@ -11,15 +11,17 @@
   "build": {
     "appId": "com.xyyima.yuque",
     "files": [
-      "app/**/*",
-      "node_modules/**/*",
+      "app/background.js",
+      "!node_modules/**/*",
       "package.json"
     ],
     "directories": {
       "buildResources": "resources"
     },
     "win": {
-      "publish": ["github"],
+      "publish": [
+        "github"
+      ],
       "artifactName": "${productName}_setup_${version}.${ext}"
     }
   },
@@ -31,7 +33,8 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit",
     "start": "node build/start.js",
-    "release": "rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w"
+    "build": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w -p never",
+    "release": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -wlm"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
