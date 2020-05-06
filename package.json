@@ -12,7 +12,7 @@
     "appId": "com.xyyima.yuque",
     "files": [
       "app/background.js",
-      "node_modules/**/*",
+      "node_modules/fs-jetpack/*",
       "package.json"
     ],
     "directories": {
@@ -34,7 +34,8 @@
     "test": "npm run unit",
     "start": "node build/start.js",
     "build": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w -p never",
-    "release": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w"
+    "release-win": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -w",
+    "release-mac": "cross-env CSC_LINK=./xyyima.pfx && rimraf dist && webpack --config=build/webpack.app.config.js --env=production && electron-builder -m"
   },
   "dependencies": {
     "fs-jetpack": "^2.1.0"
