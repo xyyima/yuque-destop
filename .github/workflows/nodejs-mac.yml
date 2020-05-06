@@ -4,7 +4,7 @@
 name: Node.js Mac Release CI
 on:
   push:
-    tags: 0.*
+    tags: v0.*
     
 jobs:
   build:
