@@ -16,7 +16,6 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: npm version ${{ github.ref}}
     - run: npm run release-mac
       env:
         CI: true
