@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: npm run preunit --if-present
+    - run: npm version ${{ github.event.release.tag_name }}
     - run: npm run release-mac
       env:
         CI: true
